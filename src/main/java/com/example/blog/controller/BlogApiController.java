@@ -2,11 +2,10 @@ package com.example.blog.controller;
 
 import com.example.blog.domain.Article;
 import com.example.blog.dto.AddArticleRequest;
-import com.example.blog.dto.ArticleResponse;
+import com.example.blog.dto.ArticleViewResponse;
 import com.example.blog.dto.UpdateArticleRequest;
 import com.example.blog.service.BlogService;
 import lombok.RequiredArgsConstructor;
-import org.hibernate.sql.Update;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -26,10 +25,10 @@ public class BlogApiController {
     }
 
     @GetMapping ("/api/articles")
-    public ResponseEntity<List<ArticleResponse>> findAllArticles() {
-        List<ArticleResponse> articles = blogService.findAll()
+    public ResponseEntity<List<ArticleViewResponse>> findAllArticles() {
+        List<ArticleViewResponse> articles = blogService.findAll()
                 .stream()
-                .map(ArticleResponse::new)
+                .map(ArticleViewResponse::new)
                 .toList();
 
         return ResponseEntity.ok()
@@ -37,11 +36,11 @@ public class BlogApiController {
     }
 
     @GetMapping("/api/articles/{id}")
-    public ResponseEntity<ArticleResponse> findArticle(@PathVariable long id) {
+    public ResponseEntity<ArticleViewResponse> findArticle(@PathVariable long id) {
         Article article = blogService.findById(id);
 
         return ResponseEntity.ok()
-                .body(new ArticleResponse(article));
+                .body(new ArticleViewResponse(article));
     }
 
     @DeleteMapping("/api/articles/{id}")
