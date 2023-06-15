@@ -18,4 +18,10 @@ public class ArticleViewResponse {
         this.id = article.getId();
         this.created_at = article.getCreated_at();
     }
+
+    public ArticleViewResponse() {
+        this.id = this.getId();
+        this.title = this.getTitle();
+        this.content = this.getContent();
+    }
 }

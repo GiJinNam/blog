@@ -31,7 +31,7 @@ public class Article {
     private String content;
 
     @CreatedDate
-    @Column(name="created_at" , nullable = false)
+    @Column(name="created_at")
     private LocalDateTime created_at;
 
     @LastModifiedDate

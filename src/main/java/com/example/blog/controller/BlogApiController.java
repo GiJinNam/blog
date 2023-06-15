@@ -19,9 +19,9 @@ public class BlogApiController {
 
     @PostMapping("/api/articles")
     public ResponseEntity<Article> addArticle(@RequestBody AddArticleRequest request) {
-        Article savedAricle = blogService.save(request);
+        Article savedArticle = blogService.save(request);
         return ResponseEntity.status(HttpStatus.CREATED)
-                .body(savedAricle);
+                .body(savedArticle);
     }
 
     @GetMapping ("/api/articles")
