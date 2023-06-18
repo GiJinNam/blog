@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>블로그 글</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+</head>
+<body>
+<div class="p-5 mb-5 text-center</> bg-light">
+    <h1 class="mb-3">My Blog</h1>
+    <h4 class="mb-3">블로그에 오신 것을 환영합니다.</h4>
+</div>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-8">
+            <article>
+                <input type="hidden" id="article-id" th:value="${article.id}">
+                <header class="mb-4">
+                    <h1 class="fw-bolder mb-1" th:text="${article.title}"></h1>
+<!--                    <div class="text-muted fst-italic mb-2" th:text="${#temporals.format(article.created_at,'yyyy-MM-dd HH:mm')}"></div>-->
+<!--                    1. 혹시 몰라서 dto에 있는 변수, db변수 동일하게 설정-->
+<!--                    2. db에는 잘 들어오는데 db에서 타임리프 거쳐서 html로 들어가는게 안됨... (에러코드 500발생)-->
+<!--                    3. 등록날짜, 수정날짜 일단 보류-->
+                    <div class="text-muted fst-italic mb-2" th:text="${article.id}"></div>
+                   </header>
+                   <section class="mb-5">
+                       <p class="fs-5 mb-4" th:text="${article.content}"></p>
+                   </section>
+                   <button type="button" id="modify-btn" th:onclick="|location.href='@{/new-article?id={articleId}(articleId=${article.id})}'|" class="btn btn-primary btn-sm">수정</button>
+                <button type="button" id="delete-btn"
+                        class="btn btn-secondary btn-sm">삭제</button>
+            </article>
+        </div>
+    </div>
+</div>
+
+<script src="/js/article.js"> </script>
+</body>
+
