@@ -32,6 +32,7 @@ public class WebSecurityConfig {
                 .authorizeHttpRequests() //인증 인가 설정
                 .requestMatchers("/login","/signup","/user").permitAll()// 특정요청과 일치하는 url에 대한 액세스 설정
                 // permitAll() : 누구나 접근이 가능하게 설정 /login, /signup, /user로 요청오면 인증/인가없이 접근가능
+                .anyRequest().authenticated()
                 .and()
                 .formLogin()
                 .loginPage("/login") // 로그인 페이지 경로 설정

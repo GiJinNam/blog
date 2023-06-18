@@ -5,9 +5,13 @@ import com.example.blog.dto.AddArticleRequest;
 import com.example.blog.dto.ArticleViewResponse;
 import com.example.blog.dto.UpdateArticleRequest;
 import com.example.blog.service.BlogService;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -56,5 +60,11 @@ public class BlogApiController {
 
         return ResponseEntity.ok()
                 .body(updateArticle);
+    }
+
+    @GetMapping("/logout")
+    public String logout(HttpServletRequest request, HttpServletResponse response) {
+        new SecurityContextLogoutHandler().logout(request,response, SecurityContextHolder.getContext().getAuthentication());
+        return "redirect:/login";
     }
 }
