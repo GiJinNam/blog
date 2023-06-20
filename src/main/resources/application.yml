@@ -13,3 +13,7 @@ spring:
     properties:
       hibernate:
         formal_sql:true
+
+jwt:
+  issuer: everday16@gmail.com
+  secret_key: study_springboot
