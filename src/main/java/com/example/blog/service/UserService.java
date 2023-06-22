@@ -21,4 +21,10 @@ public class UserService {
                 .password(bCryptPasswordEncoder.encode(dto.getPassword()))
                 .build()).getId();
     }
+    //JWT 리프레쉬 토큰을 전달받아, 새로운 액세스 토큰 생성하는 토큰 서비스
+    public User findById(Long userId) {
+        return userRepository.findById(userId)
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected user"));
+    }
 }
+

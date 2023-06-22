@@ -1,9 +1,11 @@
 package com.example.blog.service;
 
 import com.example.blog.domain.Article;
+import com.example.blog.domain.User;
 import com.example.blog.dto.AddArticleRequest;
 import com.example.blog.dto.UpdateArticleRequest;
 import com.example.blog.repository.BlogRepository;
+import com.example.blog.repository.UserRepository;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -43,4 +45,5 @@ public class BlogService {
 
         return article;
     }
+
 }
