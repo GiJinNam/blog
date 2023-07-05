@@ -28,15 +28,24 @@ public class User implements UserDetails {
     @Column(name="password")
     private String password;
 
+    @Column(name = "nickname")
+    private String nickname;
+
     @Builder
-    public User(String email,String password,String auth) {
+    public User(String email,String password,String nickname) {
         this.email = email;
         this.password = password;
+        this.nickname = nickname;
     }
 
     @Override //권환 반환
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return List.of(new SimpleGrantedAuthority("user"));
+    }
+
+    public User update(String nickname) {
+        this.nickname = nickname;
+        return this;
     }
 
     //사용자 id 반환
