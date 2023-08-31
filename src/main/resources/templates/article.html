@@ -22,19 +22,20 @@
 <!--                    1. 혹시 몰라서 dto에 있는 변수, db변수 동일하게 설정-->
 <!--                    2. db에는 잘 들어오는데 db에서 타임리프 거쳐서 html로 들어가는게 안됨... (에러코드 500발생)-->
 <!--                    3. 등록날짜, 수정날짜 일단 보류-->
-                    <div class="text-muted fst-italic mb-2" th:text="${article.id}"></div>
-                   </header>
-                   <section class="mb-5">
-                       <p class="fs-5 mb-4" th:text="${article.content}"></p>
-                   </section>
-                   <button type="button" id="modify-btn" th:onclick="|location.href='@{/new-article?id={articleId}(articleId=${article.id})}'|" class="btn btn-primary btn-sm">수정</button>
-                <button type="button" id="delete-btn"
-                        class="btn btn-secondary btn-sm">삭제</button>
-            </article>
-        </div>
-    </div>
-</div>
+                    <!--   <div class="text-muted fst-italic mb-2" th:text="By ${article.author}">>-->
+                     <div class="text-muted fst-italic mb-2" th:text="${article.id}"></div>
+                    </header>
+                    <section class="mb-5">
+                        <p class="fs-5 mb-4" th:text="${article.content}"></p>
+                    </section>
+                    <button type="button" id="modify-btn" th:onclick="|location.href='@{/new-article?id={articleId}(articleId=${article.id})}'|" class="btn btn-primary btn-sm">수정</button>
+                 <button type="button" id="delete-btn"
+                         class="btn btn-secondary btn-sm">삭제</button>
+             </article>
+         </div>
+     </div>
+ </div>
 
-<script src="/js/article.js"> </script>
-</body>
+ <script src="/js/article.js"> </script>
+ </body>
 

@@ -14,16 +14,17 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.web.bind.annotation.*;
 
+import java.security.Principal;
 import java.util.List;
 
 @RequiredArgsConstructor
 @RestController // HTTP Respoonse Body에 객체 데이터를 JSON형식으로 반환하는 컨트롤러
 public class BlogApiController {
     private final BlogService blogService;
-
+    // 인증 객체에서 유저이름을 가져오고 save()메소드로 넘기기
     @PostMapping("/api/articles")
-    public ResponseEntity<Article> addArticle(@RequestBody AddArticleRequest request) {
-        Article savedArticle = blogService.save(request);
+    public ResponseEntity<Article> addArticle(@RequestBody AddArticleRequest request , Principal principal) {
+        Article savedArticle = blogService.save(request,principal.getName());
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(savedArticle);
     }
