@@ -2,7 +2,7 @@
 
 <p align="center">
   <br>
-  <img src="/blog/images/main.PNG">
+  <img src="/images/main.PNG">
   <br>
 </p>
 
@@ -16,7 +16,7 @@
 1. 블로그를 통해서 기본적인 REST API 기능을 익히고 연습하는데 집중하려고 하였음.<br>
 2. 요즘 많이 사용하는 로그인 기능인 JWT또한 적용함으로써 신기술에 익숙해질려 노력하려고 하였음.<br>
 3. 요즘 웹 뿐만이 아니라 모바일에서도 많이 사용하는 소셜로그인 기능을 사용하려고 하였음.<br> <br>
-<img src="OneDrive/바탕 화면/blog/src/main/resources/images/socialLogin.PNG">
+<img src="/images/socialLogin.PNG">
 
 </p>
 
