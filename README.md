@@ -2,7 +2,7 @@
 
 <p align="center">
   <br>
-  <img src="OneDrive/바탕 화면/blog/src/main/resources/images/main.PNG">
+  <img src="/blog/images/main.PNG">
   <br>
 </p>
 
@@ -35,7 +35,10 @@ GIF Images
 <br>
 
 ## 구현 기능
-
+1. POST API 사용해서 블로그 글 CRUD기능 구현.
+2. JWT를 사용하여 사용자 인식,인가 기능 구현
+3. 소셜 로그인(구글)을 사용하여 간편하게 회원가입기능 구현.
+4. 
 ### 기능 1
 
 ### 기능 2
@@ -56,11 +59,4 @@ GIF Images
 
 ## 라이센스
 
-MIT &copy; [NoHack](mailto:lbjp114@gmail.com)
-
-<!-- Stack Icon Refernces -->
-
-[js]: /images/stack/javascript.svg
-[ts]: /images/stack/typescript.svg
-[react]: /images/stack/react.svg
-[node]: /images/stack/node.svg
+스프링 부트 3 백엔드 개발자 되기 신선영지음
